@@ -69,9 +69,9 @@ COPY ./src/.htaccess /var/www/html
 USER root
 
 # setting apache2
+# activate htaccess
 COPY ./src/apache2.conf /etc/apache2
 RUN /usr/sbin/a2enmod rewrite 
-#&& /etc/init.d/apache2 reload
 
 # clear cache
 RUN apt-get -y clean \
